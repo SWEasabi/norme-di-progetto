@@ -6,25 +6,61 @@
 
 I documenti vengono raggruppati in due classi principali definite dallo scopo delle stesse.
 
+\subsubsection{Documenti ad uso interno}
+
+I documenti ad uso interno sono destinati solo all'uso da parte dei membri del gruppo 
+
 \begin{itemize}
-    \item Documenti ad uso interno
-    \item Documenti ad uso esterno
+    \item Verbali interni;
+    \item Norme di progetto.
 \end{itemize}
 
-\subsection{Nome dei file e versionamento}
+\subsubsection{Documenti ad uso esterno}
+
+\begin{itemize}
+    \item Verbali esterni;
+    \item Analisi dei requisiti;
+    \item Piano di progetto;
+    \item Piano di qualifica.
+\end{itemize}
+
+\subsection{Nome dei file codificato}
+
+Tutti i documenti seguono le regole generali nella definizione del nome del file. Su queste regole possono esserci poi specifiche espansioni o eccezioni.
+
+\subsubsection{Regole generali}
+\paragraph{Notazione}I nomi dei file seguono la notazione \textit{Kebab case}.
+
+\paragraph{Indicatore di versione}Ogni file deve descrivere di che versione del documento sta parlando.
 
 
 
-I verbali vengono codificati secondo la seguente struttura:
+\subsubsection{Verbali}
+I nomi file dei verbali vengono codificati secondo la seguente struttura:
 
-\begin{center}
-    \begin{tabularx}{\linewidth}{l | l | X}
-        \textbf{Tipologia verbale} & \textbf{Prefisso} & \textbf{Numerazione}\\
+\[[TTT]\_[AAMMGG]\_[N]\]
+
+Con:
+\begin{itemize}
+    \item \textbf{TTT}: tipologia di verbale come da tabella \Ref{table:t_verbali} ;
+    \item \textbf{AAMMGG}: data di svolgimento dell'incontro a cui fa riferimento il verbale con ordinazione anno mese giorno;
+    \item \textbf{N}: Numero del verbale con partenza da 1 da inserire nel caso siano stati fatti più incontri nella medesima giornata.
+\end{itemize}
+
+\begin{table}[h]
+    \centering
+    \begin{tabularx}{0.7\linewidth}{X | l}
+        \textbf{Tipologia verbale} & \textbf{Prefisso}\\
         \hline
-        Verbale interno & VIN & X* \\
-        Verbale esterno & VEX & X* \\
+        Verbale interno & VIN \\
+        Verbali esterni & VEX\\
+        Verbali di sprint & SPR \\
     \end{tabularx}
-\end{center}
+    \caption{Tipologie verbali}
+    \label{table:t_verbali}
+\end{table}
+
+
 
 \subsection{Sigle e abbreviazioni}
 
