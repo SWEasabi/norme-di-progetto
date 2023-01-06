@@ -1,5 +1,5 @@
 \chapter{Processi di supporto}
-
+\minitoc
 \section{Documentazione}
 
 \subsection{Classificazione dei documenti}
@@ -89,23 +89,34 @@ Ogni documento ufficiale prodotto deve seguire una struttura precisa e definita 
     \begin{tabularx}{\linewidth}{l | X }            
         \textbf{Sezione} & \textbf{Scopo}\\
         \hline
-        Frontespizio/copertina & Definisce per il lettore\\
-        Registro delle modifiche & VEX\\
-        Tavola dei contenuti \\
-        Glossario &\\
-        Corpo del documento &\\
+        Frontespizio/copertina & Definisce per il lettore le informazioni base sul documento e su chi lo ha redatto\\
+        Registro delle modifiche & Sono presenti tutti i cambiamenti al documento\\
+        Tavola dei contenuti & Contiene l'indice dei contenuti presenti nel documento \\
+        Glossario & Raccoglie le definizioni di tutti i termini di riguardo specifici per il documento\\
+        Corpo del documento & Sono presenti tutte le informazioni comunicative del documento\\
     \end{tabularx}
 \end{center}
 
 \subsection{Stili testuali}
 \subsection{Elementi grafici}
-\subsection{Strumenti di stesura}
+\subsection{Strumenti di redazione e tecnologici}
 
+\paragraph{LaTeX} Utilizzato per stendere i documenti principali poiché consente di utilizzare metodologie strutturate di versionamento\footnote{Vedasi sottosezione \Ref{sss:vcs} per ulteriori informazioni.} e di verifica dei contenuti redatti.
 
+\paragraph{GitHubActions} Per controllare la consistenza del documento è presente un'azione che controlla la compilazione del documento in LaTeX.
 
 \section{Gestione di configurazione}
 
+Per la configurazione del prodotto e per la gestione documentale vengono utilizzate varie strategie per organizzare e rendere consistente.
+
 \subsection{Strumenti tecnologici}
+
+\subsubsection{VCS}\label{sss:vcs} Per il versionamento e tracciamento delle modifiche apportate ai documenti e al codice steso durante il progetto viene utilizzato il \textit{version control system} Git. 
+
+In abbinata a Git viene utilizzato GitHub per permettere facile collaborazione oltre ad accorpare in un unico luogo anche gli strumenti di ITS e CI/CD pipeline.
+
+\subsubsection{ITS} Per il tracciamento delle issue viene utilizzato GitHub.
+
 \subsection{Strutturazione dei repository}
 
 

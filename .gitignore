@@ -7,3 +7,5 @@ src-doc/*.pdf
 *.fls
 *.aux
 *.toc
+*.mtc*
+*.maf
