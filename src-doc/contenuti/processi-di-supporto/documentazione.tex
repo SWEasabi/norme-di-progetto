@@ -1,0 +1,130 @@
+\section{Documentazione}\label{s:documentazione}
+
+\subsection{Scopo}
+
+Scopo del processo di documentazione è la raccolta di tutto quanto sia utile per rendere consistente, coeso e ripetibile il processo di produzione.
+
+\subsection{Ciclo di vita dei documenti}
+
+Ogni documento segue le fasi seguenti nel suo ciclo di vita. Inoltre queste fasi si ripeteranno per tutto il tempo in cui anche il prodotto software sarà vivo.
+
+Questo ciclo di vita sarà incrementale e tracciato dalle versioni.
+
+Prodotto software e documentazione coesistono per consentire il raggiungimento dello scopo di questo processo.
+
+\paragraph{Approvazione delle modifiche} A risultato delle riunioni interne il responsabile approva le modifiche e quindi anche le aggiunte che dovranno essere eseguite al documento in oggetto.
+
+\paragraph{Redazione} Un documento viene redatto da uno o più redattori. Il documento durante la redazione verrà incrementato di tutto quanto deciso durante le riunioni. Il documento viene considerato redatto quando se ne è completata la stesura.
+
+\paragraph{Verifica} Quando un documento è stato redatto viene verificato dalla figura del \textit{verificatore}, questo ne controllerà consistenza, validità e ortografia.
+
+\paragraph{Approvazione e Rilascio} Quando il documento sarà stato verificato il responsabile approverà e rilascerà il documento seguendo le regole di versionamento definite.
+
+\subsubsection{Ciclo di vita dei verbali}
+
+I verbali seguono lo stesso ciclo di vita dei docuementi, ma non avranno fasi di ripetizione, in quanto verranno redatti, verificati e rilasciati solamente una volta. Un verbale non sarà infatti un documento modificabile.
+
+\subsection{Classificazione dei documenti}
+
+I documenti vengono raggruppati in due classi principali definite dallo scopo delle stesse.
+
+\subsubsection{Documenti ad uso interno}
+
+I documenti ad uso interno sono destinati solo all'uso da parte dei membri del gruppo 
+
+\begin{itemize}
+    \item Verbali interni;
+    \item Norme di progetto.
+\end{itemize}
+
+\subsubsection{Documenti ad uso esterno}
+
+\begin{itemize}
+    \item Verbali esterni;
+    \item Analisi dei requisiti;
+    \item Piano di progetto;
+    \item Piano di qualifica.
+\end{itemize}
+
+\subsection{Nome dei file codificato}
+
+Tutti i documenti seguono le regole generali nella definizione del nome del file. Su queste regole possono esserci poi specifiche espansioni o eccezioni.
+
+\subsubsection{Regole generali}
+\paragraph{Notazione}I nomi dei file seguono la notazione \textit{Kebab case}.
+
+\[[\text{titolo-del-documento}]\]
+
+\paragraph{Per il VCS} Per consentire il funzionamento delle pipeline di verifica\footnote{Vedasi sezione \ref{s:verifica}} dei documenti, nel sistema di \textit{VCS} i documenti in tex vanno nominati come segue.
+
+\[\text{d}\_[\text{titolo-del-documento}]\]
+
+\subsubsection{Regole specifiche per i verbali}
+I nomi file dei verbali vengono codificati secondo la seguente struttura:
+
+\[[TTT]\_[AAMMGG]\_[N]\]
+
+Con:
+\begin{itemize}
+    \item \textbf{TTT}: tipologia di verbale come da tabella \Ref{table:t_verbali} ;
+    \item \textbf{AAMMGG}: data di svolgimento dell'incontro a cui fa riferimento il verbale con ordinazione anno mese giorno;
+    \item \textbf{N}: Numero del verbale con partenza da 1 da inserire nel caso siano stati fatti più incontri nella medesima giornata.
+\end{itemize}
+
+\begin{table}[h]
+    \centering
+    \begin{tabularx}{0.7\linewidth}{X | l}
+        \textbf{Tipologia verbale} & \textbf{Prefisso}\\
+        \hline
+        Verbale interno & VIN \\
+        Verbali esterni & VEX\\
+        Verbali di sprint & SPR \\
+    \end{tabularx}
+    \caption{Tipologie verbali}
+    \label{table:t_verbali}
+\end{table}
+
+
+
+\subsection{Sigle e abbreviazioni}
+
+All'interno dei documenti per brevità e semplicità di lettura verranno spesso utilizzate sigle e abbreviazioni, di seguito quelle con porrtata generale.
+
+\begin{center}
+    \begin{tabularx}{\linewidth}{l | X }            
+        \textbf{Sigla} & \textbf{Definizione}\\
+        \hline
+        \textbf{AdR} & Analisi dei requisiti\\
+        \textbf{NdP}& Norme di progetto\\
+        \textbf{PdP}& Piano di progetto\\
+        \textbf{PdQ}& Piano di qualifica\\
+        \textbf{MU}& Manuale Utente\\
+        \textbf{MM}& Manauele Manutentore\\
+    \end{tabularx}
+\end{center}
+
+\subsection{Ciclo di vita dei documenti}
+
+\subsection{Struttura}
+
+Ogni documento ufficiale prodotto deve seguire una struttura precisa e definita per garantire consistenza comunicativa.
+
+\begin{center}
+    \begin{tabularx}{\linewidth}{l | X }            
+        \textbf{Sezione} & \textbf{Scopo}\\
+        \hline
+        Frontespizio/copertina & Definisce per il lettore le informazioni base sul documento e su chi lo ha redatto\\
+        Registro delle modifiche & Sono presenti tutti i cambiamenti al documento\\
+        Tavola dei contenuti & Contiene l'indice dei contenuti presenti nel documento \\
+        Glossario & Raccoglie le definizioni di tutti i termini di riguardo specifici per il documento\\
+        Corpo del documento & Sono presenti tutte le informazioni comunicative del documento\\
+    \end{tabularx}
+\end{center}
+
+\subsection{Stili testuali}
+\subsection{Elementi grafici}
+\subsection{Strumenti di redazione e tecnologici}
+
+\paragraph{LaTeX} Utilizzato per stendere i documenti principali poiché consente di utilizzare metodologie strutturate di versionamento\footnote{Vedasi sottosezione \Ref{sss:vcs} per ulteriori informazioni.} e di verifica dei contenuti redatti.
+
+\paragraph{GitHubActions} Per controllare la consistenza del documento è presente un'azione che controlla la compilazione del documento in LaTeX.
