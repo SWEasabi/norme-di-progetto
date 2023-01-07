@@ -4,3 +4,37 @@
 Scopo del processo di gestione della verifica è individuare errori all'interno del prodotto durante la sua produzione e la sua manutenzione.
 
 Sia la documentazione\footnote{Vedasi sezione \ref{s:documentazione} per approfondire.} che il software sono soggetti a questo processo.
+
+\subsection{Premesse fondamentali}
+
+La documentazione e il software seguono due processi differenti per la verifica ma con delle metodologie e degli standard simili.
+
+In ogni caso, la verifica segue il concetto del \textit{fail fast}, si vanno quindi ad eseguire verifiche dal più piccolo al più grande aglomenrato, sia di codice che di testo.
+
+Più in generale il processo di verifica ha due forme:
+\begin{itemize}
+    \item \textbf{Analisi statica} che non richiede l'esecuzione dell'oggetto di verifica.
+    \item \textbf{Analisi dinamica} che si può effettuare solamente durante l'esecuzione dell'oggetto di verifica.
+\end{itemize}
+
+\paragraph{Documentazione} Poiché la documentazione è redatta tramite l'utilizzo di \textit{LaTeX} si rende necessario testarne la compilazione ad ogni nuova modifica.
+
+\subsection{Metodologie e ciclo di vita}
+
+Poiché per il versionamento viene utilizzato GitHub il processo di verifica è stato fatto collimare con il percorso di verifica che propone lo strumento.
+
+Il percorso di verifica segue le seguenti fasi:
+
+\begin{enumerate}
+    \item viene aperta una issue relativamente alla parte di oggetto di verifica che deve essere espansa;
+    \item viene aperto un branch relativo alla issue o al gruppo di issue se le stesse sono in relazione tra loro;
+    \item completato il ciclo di modifiche viene aperta una \textit{pull request} che richiedeal verificatore di analizzare le modifiche fatte;
+    \item il sistema automatizzato tramite \textit{GitHubActions} effettua un' analisi statica;
+    \item il verificatore controlla che quanto è stato scritto corrisponda con quanto affermato durante la stesura delle issue e controlla che i test vadano a buon fine;
+    \item la modifica viene aggiunta all'oggetto principale e nuovamente verificata staticamente.
+\end{enumerate}
+
+\subsection{Testing}
+
+Ogni manufatto prodotto viene testato il più possibile in maniera automatica.
+
