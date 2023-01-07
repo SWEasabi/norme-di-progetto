@@ -38,3 +38,20 @@ Il percorso di verifica segue le seguenti fasi:
 
 Ogni manufatto prodotto viene testato il più possibile in maniera automatica.
 
+\paragraph{Verifica della compilazione} Si testa che il sorgente, sia esso documentale che di software compili correttamente. In particolare a livello documentale è importante che il sorgente compili anche quando questo viene integrato con il resto del documento.
+
+\paragraph{Test di unità}
+
+Ogni modulo aggiunto o modificato al sorgente viene testato singolarmente per pregiudicarne anomalie o errori al suo interno.
+
+\paragraph{Test di integrazione}
+
+Ogni modulo viene unito agli altri e se ne testa la sua integrazione con i moduli verso i quali si interfaccia.
+
+\paragraph{Test di sistema} Si verifica che il sistema faccia quello per cui è stato pensato e che rispetti quanto trovato nell'analisi dei requisiti.
+
+\subsection{Strumenti}
+
+\subsubsection{Verifiche automatiche alla alla documentazione}
+
+Alla documentazione si applica una verifica della compilazione e poi su questo vengono effettuate delle verifiche manuali da parte di un verificatore, il quale controllerà validità di quanto redatto e con questo anche l'assenza di eventuali errori grammaticali o di sintassi che possano eventualmente essere presenti.
