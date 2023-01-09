@@ -52,3 +52,16 @@ Una issue deve essere pensata come una questione risolvibile da una persona sola
 
 
 \subsection{Strutturazione dei repository}
+
+Nel sistema di controllo del versionamento sono presenti due tipologie di repository:
+
+\begin{itemize}
+    \item \textbf{Repository documentale}: dedicato al sorgente in tex dei documenti;
+    \item \textbf{Repository codice-sorgente}: dedicato al sorgente dei vari software.
+\end{itemize}
+
+\paragraph{Documentazione} Per la documentazione si è scelto un approccio a sottomoduli. Per ognuno dei documenti viene definito un singolo repository. Per la consegna degli artefatti rilasciati al \textit{Committente} e al \textit{Proponente} viene però utilizzato un repository centrale unico, contenente tutti i sottomoduli documentali.
+
+\begin{center}
+\includegraphics[width=0.6\linewidth]{img/struttura-repo-doc.png}
+\end{center}
