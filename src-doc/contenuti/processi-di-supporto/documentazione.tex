@@ -107,7 +107,11 @@ All'interno dei documenti per brevità e semplicità di lettura verranno spesso 
 
 \subsection{Struttura}
 
-Ogni documento ufficiale prodotto deve seguire una struttura precisa e definita per garantire consistenza comunicativa.
+Ogni documento ufficiale prodotto deve seguire una struttura precisa e definita per garantire consistenza comunicativa. Su queste regole possono esserci poi specifiche espansioni o eccezioni.
+
+\subsubsection{Regole generali}
+
+La struttura per i documenti generali è la seguente:
 
 \begin{center}
     \begin{tabularx}{\linewidth}{l | X }            
@@ -121,10 +125,67 @@ Ogni documento ufficiale prodotto deve seguire una struttura precisa e definita 
     \end{tabularx}
 \end{center}
 
+\paragraph{Frontespizio/copertina} Nella copertina devono essere presenti:
+\begin{itemize}
+    \item il logo dell'Università di Padova in alto a sinistra;
+    \item il logo del gruppo in alto a destra;
+    \item nome del corso, anno accademico, titolo del documento e versione al centro;
+    \item uso e destinatario, in forma tabellare, al centro.
+\end{itemize}
+Una versione già strutturata del frontespizio è presente nel repository \textit{global-assets}\footnote{\href{https://github.com/SWEasabi/global-assets}{https://github.com/SWEasabi/global-assets}}
+
+\paragraph{Registro delle modifiche} Nella registro delle modifiche saranno presenti, in forma tabellare
+\begin{itemize}
+    \item versione;
+    \item data;
+    \item modifica;
+    \item persone.
+\end{itemize}
+
+\paragraph{Tavola dei contenuti} La tavola dei contenuti viene generata automaticamente utilizzando \LaTeX.
+
+\paragraph{Glossario} Nel glossario sono presenti tutti i termini specifici attinenti al documento. Tipograficamente sono definiti utilizzando dei paragrafi.
+
+\paragraph{Corpo del documento} In questa sezione viene redatto utilizzando i capitoli il contenuto del documento.
+
+\subsubsection{Regole specifiche per i verbali}
+
+La struttura per i verbali è la seguente:
+
+\begin{center}
+    \begin{tabularx}{\linewidth}{l | X }            
+        \textbf{Sezione} & \textbf{Scopo}\\
+        \hline
+        Frontespizio/copertina & Definisce per il lettore le informazioni base sul documento e su chi lo ha redatto\\
+        Adempimenti burocratici & Definisce le informazioni generali del verbale\\
+        Corpo del documento & Sono presenti tutte le informazioni comunicative del documento\\
+    \end{tabularx}
+\end{center}
+
+\paragraph{Adempimenti burocratici}\footnote{In alcuni verbali legacy viene descritto come \textbf{Informazioni generali}} In questa sezione sono scritte in elenco puntato:
+
+\begin{itemize}
+    \item luogo e data dell'incontro:
+	\begin{itemize}
+		\item luogo;
+		\item data;
+	\end{itemize}
+	\item presenze.
+\end{itemize}
+
+Nel corpo del documento devono essere presenti:
+
+\begin{itemize}
+    \item ordine del giorno;
+    \item svolgimento;
+    \item risultati.
+\end{itemize}
+
+
 \subsection{Stili testuali}
 \subsection{Elementi grafici}
 \subsection{Strumenti di redazione e tecnologici}
 
-\paragraph{LaTeX} Utilizzato per stendere i documenti principali poiché consente di utilizzare metodologie strutturate di versionamento\footnote{Vedasi sottosezione \Ref{sss:vcs} per ulteriori informazioni.} e di verifica dei contenuti redatti.
+\paragraph{\LaTeX} Utilizzato per stendere i documenti principali poiché consente di utilizzare metodologie strutturate di versionamento\footnote{Vedasi sottosezione \Ref{sss:vcs} per ulteriori informazioni.} e di verifica dei contenuti redatti.
 
-\paragraph{GitHubActions} Per controllare la consistenza del documento è presente un'azione che controlla la compilazione del documento in LaTeX.
+\paragraph{GitHubActions} Per controllare la consistenza del documento è presente un'azione che controlla la compilazione del documento in \LaTeX.
