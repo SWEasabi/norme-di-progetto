@@ -1,0 +1,57 @@
+\section{Gestione della verifica}\label{s:verifica}
+\subsection{Scopo}
+
+Scopo del processo di gestione della verifica è individuare errori all'interno del prodotto durante la sua produzione e la sua manutenzione.
+
+Sia la documentazione\footnote{Vedasi sezione \ref{s:documentazione} per approfondire.} che il software sono soggetti a questo processo.
+
+\subsection{Premesse fondamentali}
+
+La documentazione e il software seguono due processi differenti per la verifica ma con delle metodologie e degli standard simili.
+
+In ogni caso, la verifica segue il concetto del \textit{fail fast}, si vanno quindi ad eseguire verifiche dal più piccolo al più grande aglomenrato, sia di codice che di testo.
+
+Più in generale il processo di verifica ha due forme:
+\begin{itemize}
+    \item \textbf{Analisi statica} che non richiede l'esecuzione dell'oggetto di verifica.
+    \item \textbf{Analisi dinamica} che si può effettuare solamente durante l'esecuzione dell'oggetto di verifica.
+\end{itemize}
+
+\paragraph{Documentazione} Poiché la documentazione è redatta tramite l'utilizzo di \textit{LaTeX} si rende necessario testarne la compilazione ad ogni nuova modifica.
+
+\subsection{Metodologie e ciclo di vita}
+
+Poiché per il versionamento viene utilizzato GitHub il processo di verifica è stato fatto collimare con il percorso di verifica che propone lo strumento.
+
+Il percorso di verifica segue le seguenti fasi:
+
+\begin{enumerate}
+    \item viene aperta una issue relativamente alla parte di oggetto di verifica che deve essere espansa;
+    \item viene aperto un branch relativo alla issue o al gruppo di issue se le stesse sono in relazione tra loro;
+    \item completato il ciclo di modifiche viene aperta una \textit{pull request} che richiedeal verificatore di analizzare le modifiche fatte;
+    \item il sistema automatizzato tramite \textit{GitHubActions} effettua un' analisi statica;
+    \item il verificatore controlla che quanto è stato scritto corrisponda con quanto affermato durante la stesura delle issue e controlla che i test vadano a buon fine;
+    \item la modifica viene aggiunta all'oggetto principale e nuovamente verificata staticamente.
+\end{enumerate}
+
+\subsection{Testing}
+
+Ogni manufatto prodotto viene testato il più possibile in maniera automatica.
+
+\paragraph{Verifica della compilazione} Si testa che il sorgente, sia esso documentale che di software compili correttamente. In particolare a livello documentale è importante che il sorgente compili anche quando questo viene integrato con il resto del documento.
+
+\paragraph{Test di unità}
+
+Ogni modulo aggiunto o modificato al sorgente viene testato singolarmente per pregiudicarne anomalie o errori al suo interno.
+
+\paragraph{Test di integrazione}
+
+Ogni modulo viene unito agli altri e se ne testa la sua integrazione con i moduli verso i quali si interfaccia.
+
+\paragraph{Test di sistema} Si verifica che il sistema faccia quello per cui è stato pensato e che rispetti quanto trovato nell'analisi dei requisiti.
+
+\subsection{Strumenti}
+
+\subsubsection{Verifiche automatiche alla alla documentazione}
+
+Alla documentazione si applica una verifica della compilazione e poi su questo vengono effettuate delle verifiche manuali da parte di un verificatore, il quale controllerà validità di quanto redatto e con questo anche l'assenza di eventuali errori grammaticali o di sintassi che possano eventualmente essere presenti.
