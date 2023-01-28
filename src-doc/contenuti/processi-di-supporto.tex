@@ -1,124 +1,19 @@
 \chapter{Processi di supporto}
-\section{Documentazione}
+\input{contenuti/processi-di-supporto/documentazione.tex}
 
-\subsection{Classificazione dei documenti}
+\input{contenuti/processi-di-supporto/gestione-configurazione}
 
-I documenti vengono raggruppati in due classi principali definite dallo scopo delle stesse.
+\section{Gestione della qualità}\label{s:qualità}
+\subsection{Scopo}
+Scopo del processo di Gestione della qualità è di stabilire metriche precise per tutte le attività nell’ambito della verifica e della validazione.
 
-\subsubsection{Documenti ad uso interno}
+In tal modo è possibile garantire il rispetto del livello
+di qualità fissato.
 
-I documenti ad uso interno sono destinati solo all'uso da parte dei membri del gruppo 
+Per approfondire le metriche utilizzate si rimanda al \textbf{PdQ}
 
-\begin{itemize}
-    \item Verbali interni;
-    \item Norme di progetto.
-\end{itemize}
+\input{contenuti/processi-di-supporto/gestione-verifica}
 
-\subsubsection{Documenti ad uso esterno}
+\section{Validazione}\label{s:validazione}
 
-\begin{itemize}
-    \item Verbali esterni;
-    \item Analisi dei requisiti;
-    \item Piano di progetto;
-    \item Piano di qualifica.
-\end{itemize}
-
-\subsection{Nome dei file codificato}
-
-Tutti i documenti seguono le regole generali nella definizione del nome del file. Su queste regole possono esserci poi specifiche espansioni o eccezioni.
-
-\subsubsection{Regole generali}
-\paragraph{Notazione}I nomi dei file seguono la notazione \textit{Kebab case}.
-
-\paragraph{Indicatore di versione}Ogni file deve descrivere di che versione del documento sta parlando.
-
-
-
-\subsubsection{Verbali}
-I nomi file dei verbali vengono codificati secondo la seguente struttura:
-
-\[[TTT]\_[AAMMGG]\_[N]\]
-
-Con:
-\begin{itemize}
-    \item \textbf{TTT}: tipologia di verbale come da tabella \Ref{table:t_verbali} ;
-    \item \textbf{AAMMGG}: data di svolgimento dell'incontro a cui fa riferimento il verbale con ordinazione anno mese giorno;
-    \item \textbf{N}: Numero del verbale con partenza da 1 da inserire nel caso siano stati fatti più incontri nella medesima giornata.
-\end{itemize}
-
-\begin{table}[h]
-    \centering
-    \begin{tabularx}{0.7\linewidth}{X | l}
-        \textbf{Tipologia verbale} & \textbf{Prefisso}\\
-        \hline
-        Verbale interno & VIN \\
-        Verbali esterni & VEX\\
-        Verbali di sprint & SPR \\
-    \end{tabularx}
-    \caption{Tipologie verbali}
-    \label{table:t_verbali}
-\end{table}
-
-
-
-\subsection{Sigle e abbreviazioni}
-
-All'interno dei documenti per brevità e semplicità di lettura verranno spesso utilizzate sigle e abbreviazioni, di seguito quelle con porrtata generale.
-
-\begin{center}
-    \begin{tabularx}{\linewidth}{l | X }            
-        \textbf{Sigla} & \textbf{Definizione}\\
-        \hline
-        \textbf{AdR} & Analisi dei requisiti\\
-        \textbf{NdP}& Norme di progetto\\
-        \textbf{PdP}& Piano di progetto\\
-        \textbf{PdQ}& Piano di qualifica\\
-        \textbf{MU}& Manuale Utente\\
-        \textbf{MM}& Manauele Manutentore\\
-    \end{tabularx}
-\end{center}
-
-\subsection{Ciclo di vita dei documenti}
-
-\subsection{Struttura}
-
-Ogni documento ufficiale prodotto deve seguire una struttura precisa e definita per garantire consistenza comunicativa.
-
-\begin{center}
-    \begin{tabularx}{\linewidth}{l | X }            
-        \textbf{Sezione} & \textbf{Scopo}\\
-        \hline
-        Frontespizio/copertina & Definisce per il lettore le informazioni base sul documento e su chi lo ha redatto\\
-        Registro delle modifiche & Sono presenti tutti i cambiamenti al documento\\
-        Tavola dei contenuti & Contiene l'indice dei contenuti presenti nel documento \\
-        Glossario & Raccoglie le definizioni di tutti i termini di riguardo specifici per il documento\\
-        Corpo del documento & Sono presenti tutte le informazioni comunicative del documento\\
-    \end{tabularx}
-\end{center}
-
-\subsection{Stili testuali}
-\subsection{Elementi grafici}
-\subsection{Strumenti di redazione e tecnologici}
-
-\paragraph{LaTeX} Utilizzato per stendere i documenti principali poiché consente di utilizzare metodologie strutturate di versionamento\footnote{Vedasi sottosezione \Ref{sss:vcs} per ulteriori informazioni.} e di verifica dei contenuti redatti.
-
-\paragraph{GitHubActions} Per controllare la consistenza del documento è presente un'azione che controlla la compilazione del documento in LaTeX.
-
-\section{Gestione di configurazione}
-
-Per la configurazione del prodotto e per la gestione documentale vengono utilizzate varie strategie per organizzare e rendere consistente.
-
-\subsection{Strumenti tecnologici}
-
-\subsubsection{VCS}\label{sss:vcs} Per il versionamento e tracciamento delle modifiche apportate ai documenti e al codice steso durante il progetto viene utilizzato il \textit{version control system} Git. 
-
-In abbinata a Git viene utilizzato GitHub per permettere facile collaborazione oltre ad accorpare in un unico luogo anche gli strumenti di ITS e CI/CD pipeline.
-
-\subsubsection{ITS} Per il tracciamento delle issue viene utilizzato GitHub.
-
-\subsection{Strutturazione dei repository}
-
-
-\section{Gestione della qualità}
-\section{Gestione della verifica}
-\section{Validazione}
+\subsection{Scopo} Scopo del processo di validazione è garantire che il prodotto sia conforme alle aspettative. La validazione garantisce che le linee guida delle \textbf{NdP} vengano rispettate.
