@@ -1,8 +1,126 @@
 \chapter{Processi primari}
+
 \section{Fornitura}
+\subsection{Scopo}
+Il processo di fornitura ha lo scopo di consegnare al richiedente un prodotto che soddisfi le richieste concordate con il fornitore.
+Queste richieste verranno analizzate in uno studio di fattibilità, che servirà per definire costi e tempi del progetto. Concordato ciò il proponente e il fornitore stipuleranno un contratto per la consegna del prodotto.
+
+\subsection{Aspettative}
+Durante l’intero processo di fornitura, il gruppo intende:
+\begin{itemize}
+    \item Mantenere una struttura chiara dei documenti;
+    \item Avere un constante dialogo con il proponente;
+    \item Stabilire vincoli e tempistiche per la realizzazione del prodotto;
+    \item Effettuare una continua verifica del lavoro.
+\end{itemize}
+
+\subsection{Attività}
+Il processo di fornitura si compone delle seguenti attività:
+\begin{itemize}
+    \item Inizializzazione;
+    \item Contrattazione delle richieste;
+    \item Pianificazione;
+    \item Esecuzione e controllo;
+    \item Revisione e valutazione;
+    \item Rilascio.
+\end{itemize}
 
 \section{Sviluppo}
 
+\subsection{Scopo}
+Il processo di sviluppo ha lo scopo di descrivere i compiti e le attività che il gruppo dovrà svolgere al fine di sviluppare il software richiesto dal proponente.
+
+\subsection{Aspettative}
+Le aspettative sono le seguenti:
+\begin{itemize}
+    \item fissare vincoli tecnologici;
+    \item fissare vincoli di design;
+    \item fissare gli obiettivi di sviluppo;
+    \item realizzare un prodotto finale che sia conforme alle richieste del proponente.
+\end{itemize}
+
+\subsection{Attività}
+
+L'attività del processo di sviluppo sono:
+\begin{itemize}
+    \item analisi dei requisiti;
+    \item progettazione;
+    \item codifica.
+\end{itemize}
+
 \subsection{Analisi dei requisiti}
-\subsection{Design e progettazione}
+Durante questa attività gli analisti dovranno individuare i requisiti del capitolato. Essi saranno raccolti grazie ad una prima analisi e ad una successiva riunione con il proponente.
+
+Tutto ciò sarà contenuto in un documento, che esporrà:
+\begin{itemize}
+    \item descrizione del prodotto;
+    \item casi d'uso;
+    \item requisiti.
+\end{itemize}
+
+\subsubsection{Casi d'uso}
+
+Ogni caso d'uso è strutturato come segue:
+\begin{itemize}
+    \item codice identificativo;
+    \item titolo;
+    \item precondizioni;
+    \item postcondizioni;
+    \item scenario principale;
+    \item estensioni;
+    \item generalizzazioni.
+\end{itemize}
+
+\paragraph{Codice identificativo} Il codice identificativo dei casi d'uso ha la seguente struttura:
+
+\[UC[X].[Y]-[T]\]
+
+Con:
+\begin{itemize}
+    \item \textbf{X}: numero del caso d'uso;
+    \item \textbf{Y}: numero del sottocaso del caso d'uso principale;
+    \item \textbf{T}: titolo del caso d'uso.
+\end{itemize}
+
+\subsection{Progettazione}
+Durante questa attività bisogna trovare una soluzione al capitolato proposto, partendo dall'analisi dei requisiti. Infatti l'analisi dei requisiti divide il problema in requisiti, mentre la progettazione unisce le varie parti definendo le funzionalità, racchiudendo il tutto in un'unica soluzione.
+
+Essa è formata da due parti:
+\begin{itemize}
+    \item \textbf{Tecnology Baseline:} illustra e motiva le tecnologie scelte per il prodotto;
+    \item \textbf{Product Baseline:} illustra la baseline architetturale del prodotto.
+\end{itemize}
+
+\paragraph{Tecnology Baseline} essa dovrà contenere:
+
+\begin{itemize}
+    \item Diagrammi UML delle classi e di attività;
+    \item Tecnologie adottate;
+    \item Design pattern utilizzati;
+    \item PoC (Proof of Concept)
+\end{itemize}
+
+\paragraph{Product Baseline} essa dovrà contenere:
+
+\begin{itemize}
+    \item Definizione delle classi;
+    \item Test di unità su ogni componente, per verificarne il corretto funzionamento.
+\end{itemize}
+
 \subsection{Codifica}
+Durante questa attività bisogna realizzare il software vero e proprio, partendo dalla progettazione.
+Il codice scritto dovrà rispettare delle norme per essere facilmente leggibile e in futuro manutenibile.
+
+\subsubsection{Stile della codifica}
+
+\begin{itemize}
+    \item \textbf{Indentazione:} i blocchi di codice dovranno avere una indentazione di quattro spazi;
+    \item \textbf{Parentesi:} la parantesi aperta andrà inserita nella stessa riga di quella del costrutto, la parentesi chiusa andrà inserita nella riga successiva all'ultima istruzione del blocco;
+    \item \textbf{Metodi:} il nome dei metodi seguirà la codifica \textit{camelCase};
+    \item \textbf{Classi:} il nome delle classi seguirà la codifica \textit{PascalCase};
+    \item \textbf{Variabili:} il nome delle variabili seguirà la codifica \textit{camelCase};
+    \item \textbf{Costanti:} il nome delle costanti sarà completamente in maiuscolo;
+    \item \textbf{Commenti:} i commenti saranno inseriti prima dell'inizio del costrutto e dovranno essere coincisi ed esplicativi;
+    \item \textbf{File:} il nome dei file seguirà la codifica \textit{kebab-case};
+    \item \textbf{Lingua:} i commenti dovranno essere scritti in italiano, fatta eccezione per alcuni inglesismi, mentre le variabili, i metodi, le classi ed i nomi dei file potranno essere scritti sia in italiano che in inglese;
+\end{itemize}
