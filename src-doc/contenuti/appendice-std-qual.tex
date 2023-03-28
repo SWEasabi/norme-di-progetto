@@ -1,1 +1,101 @@
 \chapter{Standard di qualità ISO/IEC 9126}
+ISO/IEC 9126 descrive un modello di qualità del software, definisce le caratteristiche che la determinano e propone metriche per la sua misurazione.
+
+Questo standard si divide in quattro parti:
+
+\section{Modello di qualità}
+Questa prima parte del modello si compone a sua volta di due parti:
+
+\subsection{Qualità esterna ed interna}
+In questa sezione vengono descritte sei caratteristiche e varie sotto-caratteristiche per la qualità esterna ed interna, di seguito riportate.
+
+\subsection{Funzionalità}
+Capacità del prodotto software di fornire funzioni che soddisfino esigenze espresse ed implicite,
+necessarie ad operare in specifiche condizioni.
+
+\begin{itemize}
+    \item  Adeguatezza: capacità del prodotto software di fornire un appropriato insieme di funzioni per specifici task e obiettivi dell'utente;
+    \item Accuratezza: capacità del prodotto software di fornire i risultati o effetti corretti o stabiliti con un certo grado di precisione;
+    \item Interoperabilità: capacità del prodotto software di interagire con uno o più sistemi specificati;
+    \item Sicurezza: la capacità del prodotto software di proteggere informazioni e dati, negandone l'accesso e la modifica a persone e sistemi non autorizzati ma permettendola a chi è abilitato;
+    \item Conformità: capacità del prodotto software di aderire a standard, convenzioni e regolamenti di carattere legale o similari che siano attinenti alle funzionalità offerte.
+\end{itemize}
+
+\subsection{Affidabilità}
+Capacità del prodotto software di mantenere livelli di performance specificati quando utilizzato sotto specifiche condizioni.
+
+\begin{itemize}
+    \item Maturità: capacità del prodotto software di evitare che si verifichino errori o siano prodotti risultati non corretti;
+    \item Tolleranza agli errori: capacità del prodotto software di mantenere livelli predeterminati di prestazioni anche in presenza di malfunzionamenti o usi scorretti del prodotto;
+    \item Recuperabilità: capacità del prodotto software di ripristinare il livello appropriato di prestazioni e di recuperare le informazioni rilevanti in seguito a un malfunzionamento. A seguito di un errore, il software può risultare non accessibile per un determinato periodo di tempo. Questo arco di tempo è valutato proprio dalla caratteristica di recuperabilità;
+    \item Aderenza: capacità del prodotto software di aderire a standard, regole e convenzioni relative all'affidabilità.
+\end{itemize}
+
+\subsection{Usabilità}
+Capacità del prodotto software di essere comprensibile, apprendibile, usabile e attraente per l'utente quando utilizzato sotto condizioni specifiche.
+
+\begin{itemize}
+    \item Comprensibilità: capacità del prodotto software di rendere l'utente in grado di capire le sue funzionalità e di come poterle utilizzare per svolgere determinati task.
+    \item Apprendibilità: capacità del prodotto software di permettere all'utente di imparare l'applicazione;
+    \item Operabilità: capacità del prodotto software di permettere agli utenti di utilizzarlo e controllarlo;
+    \item Attrattività: capacità del prodotto software di risultare attraente per l'utente;
+    \item Aderenza all'usabilità: capacità del software di aderire a standard o convenzioni relative all'usabilità.
+\end{itemize}
+
+\subsection{Efficienza}
+Capacità del prodotto software di fornire prestazioni appropriate, relativamente alla quantità di risorse usate, sotto determinate condizioni.
+
+\begin{itemize}
+    \item Comportamento rispetto al tempo: capacità del prodotto software di fornire adeguati tempi di risposta e di elaborazione sotto specifiche condizioni;
+    \item Utilizzo delle risorse: capacità del prodotto software di utilizzare un numero e tipo di risorse appropriato quando esegue le funzionalità previste sotto determinate condizioni di utilizzo;
+    \item Conformità: capacità del prodotto software di aderire a standard e convenzioni relative all'efficienza.
+\end{itemize}
+
+\subsection{Manutenibilità}
+Capacità del prodotto software di essere modificato, includendo correzioni, miglioramenti o adattamenti.
+
+\begin{itemize}
+    \item Analizzabilità: capacità di poter effettuare la diagnosi sul prodotto software ed individuare le cause di errori o malfunzionamenti;
+    \item  Modificabilità: capacità del prodotto software di permettere lo sviluppo di modifiche al prodotto originale (codice, progettazione, documentazione);
+    \item Stabilità: capacità del prodotto software di evitare effetti indesiderati derivanti da modifiche del software;
+    \item Testabilità: capacità del prodotto software di consentire la verifica e validazione del software modificato;
+    \item Aderenza alla manutenibilità: capacità del prodotto software di aderire a standard e convenzioni relative alla manutenibilità.
+\end{itemize}
+
+\subsection{Portabilità}
+
+Capacità del prodotto software di essere trasportato da un ambiente di lavoro ad un altro.
+
+\begin{itemize}
+    \item Adattabilità: capacità del prodotto software di essere adattato a differenti ambienti senza richiedere azioni specifiche diverse da quelle previste dal software per tali attività;
+    \item Installabilità: capacità del prodotto software di essere installato in uno specifico ambiente;
+    \item  Coesistenza: capacità del prodotto software di coesistere con altre applicazioni indipendenti in ambienti comuni e condividere risorse;
+    \item Sostituibilità: capacità del prodotto software di sostituire un altro software specifico per svolgere gli stessi compiti nello stesso ambiente;
+    \item Aderenza alla portabilità: capacità del prodotto software di aderire a standard e convenzioni relative alla portabilità.
+\end{itemize}
+
+
+\subsection{Qualità in uso}
+In questa sezione vengono specificate quattro caratteristiche per la qualità in uso.
+
+\begin{itemize}
+    \item Efficacia: capacità del prodotto software di permettere all'utente di raggiungere gli obiettivi specifici con accuratezza e completezza;
+    \item Produttività: capacità del prodotto software di permettere all'utente di impegnare un numero definito di risorse, in relazione all'efficacia raggiunta, in uno specifico contesto d'uso;
+    \item Sicurezza fisica: rappresenta la capacità del prodotto software di raggiungere un livello accettabile di rischio per i dati, le persone, il business, le proprietà o gli ambienti in uno specifico contesto di utilizzo;
+    \item  Soddisfazione: capacità del prodotto software di soddisfare gli utenti in uno specifico contesto di utilizzo.
+\end{itemize}
+
+\section{Metriche per la qualità esterna}
+La seconda parte dello standard definisce le metriche per misurare quantitativamente la qualità esterna del prodotto software rispetto alle caratteristiche definite nella prima parte.
+
+Con qualità esterna si intendono i comportamenti del prodotto software rilevabili dai test e dall'osservazione durante la sua esecuzione.
+
+\section{Metriche per la qualità interna}
+La terza parte dello standard definisce le metriche per misurare quantitativamente la qualità interna del prodotto software rispetto alle caratteristiche definite nella prima parte.
+
+Le metriche interne si applicano al software non eseguibile durante le fasi di progettazione e codifica e misurano qualità intrinseche del prodotto. Esse permettono di individuare eventuali problemi che potrebbero influire sulla qualità finale del prodotto prima che sia realizzato il software eseguibile.
+
+\section{Metriche per la qualità in uso}
+La quarta parte dello standard definisce le metriche per misurare quantitativamente la qualità in uso del prodotto software rispetto alle caratteristiche definite nella prima parte. Esse misurano il grado con cui il prodotto software permette agli utenti di svolgere le proprie attività con efficacia, produttività, sicurezza e soddisfazione nel contesto operativo previsto.
+
+La qualità in uso rappresenta la vista esterna che l'utente ha del prodotto ed è misurata in base ai risultati ottenuti dal suo utilizzo.
