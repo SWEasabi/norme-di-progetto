@@ -122,4 +122,4 @@ jobs:
       - name: 🎁 Release
         uses: softprops/action-gh-release@v1
         with:
-          files: norme-di-progetto.zip
+          files: ${{ env.REPO_NAME }}.zip
