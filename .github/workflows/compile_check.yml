@@ -50,7 +50,6 @@ jobs:
       - name: ✍ Remove prefix d_ in PDF files
         run: find ./${{ env.REPO_NAME }} -type f -name 'd_*.pdf' | while read f; do mv "$f" "${f/d_/}"; done
 
-      # Grazie ad @augustozanellato per la scoperta di apindex
       - name: ⚒ Install apindex and update HTML template
         run: |
           git clone --depth=1 https://github.com/paperbenni/apindex.git
