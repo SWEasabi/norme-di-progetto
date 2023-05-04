@@ -187,4 +187,35 @@ Nel corpo del documento devono essere presenti:
 
 \paragraph{\LaTeX} Utilizzato per stendere i documenti principali poiché consente di utilizzare metodologie strutturate di versionamento\footnote{Vedasi sottosezione \Ref{sss:vcs} per ulteriori informazioni.} e di verifica dei contenuti redatti.
 
-\paragraph{GitHubActions} Per controllare la consistenza del documento è presente un'azione che controlla la compilazione del documento in \LaTeX.
+\paragraph{GitHub Actions} Per controllare la consistenza del documento è presente un'azione che controlla la compilazione del documento in \LaTeX.
+
+\subsection{Workflows}
+
+\subsubsection{Aggiunta a backlog}
+
+Ogni issue e pull request aperte in submodules che fanno uso di questo workflow vengono aggiunte al GitHub Project dell'organizzazione.
+
+\lstinputlisting{\gassets global-assets/yml/backlog.yml}
+
+\subsubsection{Compilazione dei documenti, GitHub Page e Release}
+
+\paragraph{Impostazione variabili d'ambiente} Per semplificare l'installazione del workflow nei diversi submodules dedicati alla documentazione è stato pensato un template che richiede modifiche solo nella sezione dedicata alla dichiarazione delle variabili d'ambiente. Queste variabili determinano come si chiameranno gli artifacts che produrrà il workflow (\texttt{REPO\_NAME}) e il titolo che verrà mostrato nella GitHub Page (\texttt{DISPLAY\_NAME}).
+
+\lstinputlisting[linerange={1-5}]{\gassets global-assets/yml/compile_check.yml}
+
+\paragraph{Compilazione dei documenti} La compilazione avviene mediante \texttt{latexmk -lualatex} di tutti i file \texttt{.tex} che presentano nel nome il prefisso "d\_". Prima della compilazione il workflow si occupa anche di prelevare tutti i documenti presenti nei sottomoduli. Infine, dopo la compilazione, genera un artifact contenente esclusivamente i file in formato \texttt{.pdf} che saranno utilizzati nei prossimi job.
+
+\lstinputlisting[linerange={7-31}]{\gassets global-assets/yml/compile_check.yml}
+
+\paragraph{Creazione GitHub Page} Questa sezione si occupa di generare le pagine HTML che GitHub interpreterà e renderà disponibili. Il workflow fa uso della Action "apindex" per generare le pagine a partire da un template messo a disposizione nel sottomodulo global-assets.
+
+\lstinputlisting[linerange={33-72}]{\gassets global-assets/yml/compile_check.yml}
+
+\paragraph{Distribuzione GitHub Page} L'Action di GitHub dedicata al deploy consente la costruzione del sito web a partire dalle pagine HTML presenti nell'artifact generato nel job precedente. L'aggiornamento del sito web avviene esclusivamente al rilevamento di un tag (ad esempio il push della v1.0.0).\\
+\textbf{Nota}: Per consentire a GitHub di rendere disponibile il sito web è necessario modificare un'impostazione del repository. Verificare, quindi, che in \texttt{Settings\rightarrow Pages\rightarrow Build and deployment} sia selezionata "GitHub Actions" come Source.
+
+\lstinputlisting[linerange={74-101}]{\gassets global-assets/yml/compile_check.yml}
+
+\paragraph{Rilascio versione} Nell'ultima sezione i file in formato \texttt{.pdf} e privi di prefisso "d\_" vengono raccolti in un archivio \texttt{.zip} che viene allegato alla Release del repository. Il rilascio dell'archivio avviene esclusivamente al rilevamento di un tag (ad esempio il push della v1.0.0).
+
+\lstinputlisting[linerange={103-124}]{\gassets global-assets/yml/compile_check.yml}
