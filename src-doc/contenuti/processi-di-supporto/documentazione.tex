@@ -203,6 +203,16 @@ Ogni issue e pull request aperte in submodules che fanno uso di questo workflow 
 
 \lstinputlisting[linerange={1-5}]{\gassets global-assets/yml/compile_check.yml}
 
+\textbf{Esempio per il documento corrente}\\
+
+\begin{lstlisting}
+on: [push, pull_request]
+
+env:
+  REPO_NAME: norme-di-progetto
+  DISPLAY_NAME: Norme di progetto
+\end{lstlisting}
+
 \paragraph{Compilazione dei documenti} La compilazione avviene mediante \texttt{latexmk -lualatex} di tutti i file \texttt{.tex} che presentano nel nome il prefisso "d\_". Prima della compilazione il workflow si occupa anche di prelevare tutti i documenti presenti nei sottomoduli. Infine, dopo la compilazione, genera un artifact contenente esclusivamente i file in formato \texttt{.pdf} che saranno utilizzati nei prossimi job.
 
 \lstinputlisting[linerange={7-31}]{\gassets global-assets/yml/compile_check.yml}
@@ -211,10 +221,14 @@ Ogni issue e pull request aperte in submodules che fanno uso di questo workflow 
 
 \lstinputlisting[linerange={33-72}]{\gassets global-assets/yml/compile_check.yml}
 
-\paragraph{Distribuzione GitHub Page} L'Action di GitHub dedicata al deploy consente la costruzione del sito web a partire dalle pagine HTML presenti nell'artifact generato nel job precedente. L'aggiornamento del sito web avviene esclusivamente al rilevamento di un tag (ad esempio il push della v1.0.0).\\
-\textbf{Nota}: Per consentire a GitHub di rendere disponibile il sito web è necessario modificare un'impostazione del repository. Verificare, quindi, che in \texttt{Settings\rightarrow Pages\rightarrow Build and deployment} sia selezionata "GitHub Actions" come Source.
+\paragraph{Distribuzione GitHub Page} L'Action di GitHub dedicata al deploy consente la costruzione del sito web a partire dalle pagine HTML presenti nell'artifact generato nel job precedente. L'aggiornamento del sito web avviene esclusivamente al rilevamento di un tag (ad esempio il push della v1.0.0).
+
 
 \lstinputlisting[linerange={74-101}]{\gassets global-assets/yml/compile_check.yml}
+
+\paragraph{Nota} Per consentire a GitHub di rendere disponibile il sito web è necessario modificare un'impostazione del repository. Verificare, quindi, che in \texttt{Settings\rightarrow Pages\rightarrow Build and deployment} sia selezionata "GitHub Actions" come Source.
+
+\includegraphics[width=\linewidth]{img/pages_actions.png}
 
 \paragraph{Rilascio versione} Nell'ultima sezione i file in formato \texttt{.pdf} e privi di prefisso "d\_" vengono raccolti in un archivio \texttt{.zip} che viene allegato alla Release del repository. Il rilascio dell'archivio avviene esclusivamente al rilevamento di un tag (ad esempio il push della v1.0.0).
 
